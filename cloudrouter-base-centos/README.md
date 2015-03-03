@@ -3,5 +3,5 @@ CloudRouter base container.
 
 ## Building
 ```sh
-docker build --tag=cloudrouter/base-centos
+docker build --tag=cloudrouter/base-centos .
 ```
