@@ -1,5 +1,14 @@
 #!/usr/bin/env bash
 
+preargs="-i"
+
+while getopts d o
+do    case "$o" in
+    d)    preargs="-d";;
+    [?])  exit 1;;
+    esac
+done
+
 docker run \
     -p 62:62 \
     -p 179:179 \
@@ -24,4 +33,5 @@ docker run \
     -p 8181:8181 \
     -p 8383:8383 \
     -p 12001:12001 \
+    $preargs \
     cloudrouter/odl-fedora
