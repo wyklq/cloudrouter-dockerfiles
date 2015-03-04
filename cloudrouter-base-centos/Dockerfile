@@ -2,7 +2,15 @@ FROM centos:latest
 MAINTAINER "Arun Neelicattu" <abn@iix.net>
 
 # Install EPEL
-RUN yum install -y epel-release && yum clean all
+RUN yum install -y epel-release curl && yum clean all
+
+# Install any additional stuff required
+RUN curl --silent \
+    https://raw.githubusercontent.com/iixlabs/cloudrouter/master/build/images/scripts/common.sh \
+    | bash
+RUN curl --silent \
+    https://raw.githubusercontent.com/iixlabs/cloudrouter/master/build/images/scripts/centos.sh \
+    | bash
 
 # Install CloudRouter release repository
 RUN yum -y install \

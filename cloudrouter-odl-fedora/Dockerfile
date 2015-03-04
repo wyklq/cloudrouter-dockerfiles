@@ -1,4 +1,4 @@
-FROM cloudrouter/base-fedora
+FROM cloudrouter/base-fedora:latest
 MAINTAINER "Arun Neelicattu" <abn@iix.net>
 
 RUN yum -y install opendaylight

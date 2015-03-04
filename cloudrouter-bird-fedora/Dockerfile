@@ -1,5 +1,5 @@
-FROM cloudrouter/base-fedora
-MAINTAINER "Arun Neelicattu" <aneelicattu@iix.net>
+FROM cloudrouter/base-fedora:latest
+MAINTAINER "Arun Neelicattu" <abn@iix.net>
 
 RUN yum -y install bird supervisor && yum -y clean all
 RUN [[ ! -d /etc/bird ]] && mkdir -p /etc/bird \

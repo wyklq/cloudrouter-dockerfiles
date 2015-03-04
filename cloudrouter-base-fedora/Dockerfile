@@ -1,6 +1,14 @@
 FROM fedora:20
 MAINTAINER "Arun Neelicattu" <abn@iix.net>
 
+# Install any additional stuff required
+RUN curl --silent \
+    https://raw.githubusercontent.com/iixlabs/cloudrouter/master/build/images/scripts/common.sh \
+    | bash
+RUN curl --silent \
+    https://raw.githubusercontent.com/iixlabs/cloudrouter/master/build/images/scripts/fedora.sh \
+    | bash
+
 RUN yum -y install \
     deltarpm \
     https://cloudrouter.org/repo/beta/x86_64/cloudrouter-release-latest.noarch.rpm
