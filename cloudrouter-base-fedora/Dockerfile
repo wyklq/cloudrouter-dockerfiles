@@ -10,10 +10,10 @@ RUN yum -y clean all
 
 # Install any additional stuff required
 RUN curl --silent \
-    https://raw.githubusercontent.com/iixlabs/cloudrouter/master/build/images/scripts/common.sh \
+    https://raw.githubusercontent.com/cloudrouter/cloudrouter/master/build/images/scripts/common.sh \
     | bash
 RUN curl --silent \
-    https://raw.githubusercontent.com/iixlabs/cloudrouter/master/build/images/scripts/fedora.sh \
+    https://raw.githubusercontent.com/cloudrouter/cloudrouter/master/build/images/scripts/fedora.sh \
     | bash
 
 ONBUILD RUN yum -y update && yum -y clean all
