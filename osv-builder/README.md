@@ -7,7 +7,7 @@ OSv is an amazing Operating System by [Cloudius Systems](http://www.cloudius-sys
 ## Building locally
 
 ```sh
-docker build -t osv-builder
+docker build -t cloudrouter/osv-builder .
 ```
 
 ## Launching an interactive session
@@ -15,7 +15,7 @@ docker build -t osv-builder
 ```sh
 docker run -it \
   --volume ${HOST_BUILD_DIR}:/osv/builder \
-  osv-builder
+  cloudrouter/osv-builder
 ```
 
 This will place you into the OSv source clone. You can work with it as you normally would when working on OSv source, apps, build scripts etc. For example, you can run the following commands, once the above `docker run` commands has been executed, to build and run a tomcat appliance.
@@ -32,7 +32,7 @@ This will place you into the OSv source clone. You can work with it as you norma
 ```sh
 docker run \
   --volume ${HOST_BUILD_DIR}:/osv/build \
-  osv-builder \
+  cloudrouter/osv-builder \
   osv build image=opendaylight
 ```
 
@@ -52,7 +52,7 @@ You could also run commands as:
 ```sh
 docker run \
   --volume ${HOST_BUILD_DIR}:/osv/build \
-  osv-builder \
+  cloudrouter/osv-builder \
   ./scripts/build image=opendaylight
 ```
 
@@ -68,7 +68,7 @@ List the images that we already have on the host by mounting the `~/.capstan/rep
 docker run \
   --privileged \
   --volume ${HOME}/.capstan/repository:/capstan-repository \
-  alectolytic/osv-builder \
+  cloudrouter/osv-builder \
   capstan images
 ```
 
@@ -77,7 +77,7 @@ Capstan build and run `iperf` app:
 ```
 [abn@zoidberg ~]$ sudo docker run -it \
   --privileged \
-  alectolytic/osv-builder
+  cloudrouter/osv-builder
 bash-4.3# cd apps/iperf
 bash-4.3# capstan build
 Building iperf...
@@ -98,7 +98,7 @@ TCP window size: 64.0 KByte (default)
 
 ## Building appliance images
 
-If using the pre-built version from docker hub, use `alectolytic/osv-builder` instead of `osv-builder`.
+If using the pre-built version from docker hub, use `cloudrouter/osv-builder` instead of `osv-builder`.
 
 ```sh
 HOST_BUILD_DIR=$(pwd)/build
