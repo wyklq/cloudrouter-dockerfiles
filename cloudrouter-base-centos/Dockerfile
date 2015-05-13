@@ -6,7 +6,7 @@ RUN yum -y install \
     epel-release curl
 RUN yum -y update
 RUN yum -y swap -- remove centos-release* -- install https://repo.cloudrouter.org/1/x86_64/cloudrouter-release-centos-latest.noarch.rpm
-RUN find /etc/pki/rpm-gpg/ -maxdepth 1 -type f -name 'RPM-GPG-KEY-CLOUDROUTER*' \
+RUN find /etc/pki/rpm-gpg/ -maxdepth 1 -type f -name 'RPM-GPG-KEY-cloudrouter*' \
     -exec rpm --import {} \;
 RUN yum -y clean all
 
