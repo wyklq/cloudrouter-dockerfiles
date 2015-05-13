@@ -1,5 +1,5 @@
 FROM fedora:20
-MAINTAINER "Arun Neelicattu" <abn@iix.net>
+MAINTAINER "Arun Neelicattu" <arun.neelicattu@gmail.com>
 
 RUN yum -y install deltarpm
 RUN yum -y update
