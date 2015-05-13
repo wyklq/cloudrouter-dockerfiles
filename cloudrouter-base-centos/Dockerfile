@@ -1,5 +1,5 @@
 FROM centos:latest
-MAINTAINER "Arun Neelicattu" <abn@iix.net>
+MAINTAINER "Arun Neelicattu" <arun.neelicattu@gmail.com>
 
 RUN yum -y install \
     deltarpm \
