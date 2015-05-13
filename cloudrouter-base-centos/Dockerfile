@@ -5,9 +5,9 @@ RUN yum -y install \
     deltarpm \
     epel-release curl
 RUN yum -y update
-RUN yum -y install \
-    https://repo.cloudrouter.org/beta/x86_64/cloudrouter-release-latest.noarch.rpm
-RUN rpm --import /etc/pki/rpm-gpg/RPM-GPG-KEY-CLOUDROUTER
+RUN yum -y swap -- remove centos-release* -- install https://repo.cloudrouter.org/1/x86_64/cloudrouter-release-centos-latest.noarch.rpm
+RUN find /etc/pki/rpm-gpg/ -maxdepth 1 -type f -name 'RPM-GPG-KEY-CLOUDROUTER*' \
+    -exec rpm --import {} \;
 RUN yum -y clean all
 
 # Install any additional stuff required
