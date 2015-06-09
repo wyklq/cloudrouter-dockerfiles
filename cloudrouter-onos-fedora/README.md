@@ -1,5 +1,5 @@
 # CloudRouter (w/ ONOS) Docker Container
-CloudRouter container with [ONOS](http://www.onosproject.org/).
+CloudRouter container with [ONOS](http://www.onosproject.org/) 1.2.0 (Cardinal).
 
 ## Building
 ```
