@@ -1,3 +1,6 @@
 [submodule "contrib-shared"]
 	path = contrib-shared
 	url = https://github.com/cloudrouter/cloudrouter-contrib-shared.git
+[submodule "cloudrouter-docker-registry-secure-fedora"]
+	path = cloudrouter-docker-registry-secure-fedora
+	url = https://github.com/abn/docker-registry-secure.git
