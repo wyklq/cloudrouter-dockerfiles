@@ -1,8 +1,7 @@
-FROM fedora:latest
+FROM cloudrouter/base-fedora:latest
 MAINTAINER "David Jorm" <djorm@iix.net>
 
-RUN yum -y update
-RUN yum -y install https://cloudrouter.org/repo/1/x86_64/onos-1.2.0-1.noarch.rpm
+RUN yum -y install onos
 RUN yum clean all
 
 # expose ports as listed at http://sdnhub.org/tutorials/onos/
