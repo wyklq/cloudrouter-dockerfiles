@@ -34,8 +34,8 @@ ENV CAPSTAN_ROOT=/capstan-repository
 RUN dnf -y install \
     capstan
 
-# fetch and setup OSV_REPO branch for OSV_VERSION
-RUN git clone -b v${OSV_VERSION} --single-branch ${OSV_REPO} ${OSV_DIR}
+# fetch and setup OSV_REPO branch for master branch
+RUN git clone ${OSV_REPO} ${OSV_DIR}
 RUN cd ${OSV_DIR} && git submodule update --init --recursive
 
 # add assets
