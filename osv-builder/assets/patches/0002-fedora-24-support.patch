@@ -1,0 +1,33 @@
+diff --git a/scripts/setup.py b/scripts/setup.py
+index f3b4d7d..65bc071 100755
+--- a/scripts/setup.py
++++ b/scripts/setup.py
+@@ -22,9 +22,9 @@ standard_ec2_post_install = ['pip install awscli &&'
+
+ class Fedora(object):
+     name = 'Fedora'
+-    install = 'yum -y install'
++    install = 'dnf -y install'
+     packages = ['gcc-c++', 'gcc-c++-aarch64-linux-gnu', 'git', 'gdb', 'qemu-img',
+-                'qemu-system-x86', 'libvirt', 'maven', 'java-1.7.0-openjdk',
++                'qemu-system-x86', 'libvirt', 'maven', 'java-1.8.0-openjdk',
+                 'ant', 'autoconf', 'automake', 'boost-static', 'genromfs', 'libtool',
+                 'flex', 'bison', 'maven-shade-plugin', 'python-dpkt', 'tcpdump', 'gdb',
+                 'gnutls-utils', 'openssl', 'python-requests', 'p11-kit', 'patch', 'wget',
+@@ -55,8 +55,15 @@ class Fedora(object):
+         test_packages = []
+         ec2_post_install = None
+         version = '21'
++
++    class Fedora_24(object):
++        packages = []
++        ec2_packages = []
++        test_packages = []
++        ec2_post_install = None
++        version = '24'
+
+-    versions = [Fedora_19, Fedora_20, Fedora_21]
++    versions = [Fedora_19, Fedora_20, Fedora_21, Fedora_24]
+
+ class RHELbased(Fedora):
+     name = ['Scientific Linux', 'NauLinux', 'CentOS Linux',
